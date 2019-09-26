@@ -50,10 +50,11 @@ public class Seminario {
     
     
     public void mostrar(){
+        //Formateo la fecha para presentarla en pantalla de la forma dd/mm/aaaa
         String patron="dd/MM/yyyy";
         String fechaExpoFormateada= this.fechaExposicion!=null ? this.fechaExposicion.format(DateTimeFormatter.ofPattern(patron)):"";
         
-             
+        //Como se que se agrega un seminario con una fecha  y nota, asumno que no son null, por lo tanto no hago ese control     
         System.out.println("Fecha de Exposicion:"+fechaExpoFormateada);   
         if(nota==NotaAprobacion.APROBADO_CO || nota==NotaAprobacion.APROBADO_SINOBS)//Como lo dos son aprobado muestro solo mensaje
             System.out.println("Nota: Aprobado  ");
@@ -90,8 +91,7 @@ public class Seminario {
         return true;
     }
 
-    
-    
+       
     @Override
     public String toString() {
         return "Seminario{" + "fechaExposicion=" + fechaExposicion + ", observaciones=" + observaciones + ", nota=" + nota + '}';

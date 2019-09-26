@@ -12,7 +12,7 @@ import java.util.Objects;
  * @author gabinete
  */
 public class Alumno extends Persona{
-    private String cx;
+    private String cx; //Como veniamos trabajando con cx desde el principio, decidimos dejarlo y no cambiarlo por legajo
    
     
     public Alumno(String apellidos,String nombre, int dni, String cx){
@@ -44,8 +44,8 @@ public class Alumno extends Persona{
 
     @Override
     public boolean equals(Object obj) {
-//        super.equals(obj);
-        
+//        super.equals(obj);  //Como el super.equals no funcionaba, lo comentamos e hicimos 
+                              // las modificaciones necesarias para que funciones
         if (this == obj) {
             return true;
         }
@@ -56,7 +56,7 @@ public class Alumno extends Persona{
             return false;
         }
         
-        if(obj.getClass() == Profesor.class){
+        if(obj.getClass() == Profesor.class){ //Si comparao con un alumno con un profesor entra en el if, donde compara si tienen mismo DNI
             final Persona other1 = (Persona) obj;
             if (this.getDni() != other1.getDni()) {
                 return false;

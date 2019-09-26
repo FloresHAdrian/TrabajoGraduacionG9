@@ -26,6 +26,7 @@ public class Area {
         this.nombre = nombre;
     }
     
+    //Metodo para mostrar el nombre del Area
     public void mostrar(){
         System.out.println("\tArea: "+nombre);
     }
@@ -57,7 +58,7 @@ public class Area {
     
     @Override
     public String toString() {
-        return "Area: "+ nombre + "\n";
+        return "Area: "+ nombre ;
     }
         
 }

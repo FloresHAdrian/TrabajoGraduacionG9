@@ -5,8 +5,6 @@
  */
 package gui.personas.modelos;
 
-import java.util.Objects;
-
 /**
  *
  * @author Adrian
@@ -47,6 +45,7 @@ public abstract class Persona {
         this.dni = dni;
     }
     
+    //Metodo mostrar
     public void mostrar(){
         System.out.print("["+dni+"] - "+apellido+", "+nombre);
     }

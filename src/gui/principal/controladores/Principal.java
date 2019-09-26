@@ -55,9 +55,10 @@ public class Principal {
         ArrayList<Area> listaA3= new ArrayList<>();
         listaA3.add(listaAreas.get(1));
         listaA3.add(listaAreas.get(3));
-        System.out.println("\n***Lista de Areas *** \n ");
+        System.out.println("\n***** Lista de Areas ***** \n ");
         for (Area a :listaAreas)
             System.out.println(a);
+        System.out.println("\n");
         //***************************Areas**********************************
         //***************************PERSONAS**********************************
         //PROFESOR
@@ -196,16 +197,16 @@ public class Principal {
         else
             System.out.println("NO se agregó el alumno 11");
         
-        System.out.println("\n*** Lista de Personas *** \n ");
+        System.out.println("\n***** Lista de Personas ***** \n ");
         for(Persona p: listaPersonas)
             System.out.println(p);
 //        
-        System.out.println("\n*** Lista de Profesores *** \n ");
+        System.out.println("\n***** Lista de Profesores ***** \n ");
         for(Persona p: listaPersonas)
             if(p instanceof Profesor)
                 System.out.println(p);
         
-        System.out.println("\n*** Lista de Alumnos *** \n ");
+        System.out.println("\n***** Lista de Alumnos ***** \n ");
         for(Persona p: listaPersonas)
             if(p instanceof Alumno)
                 System.out.println(p);
@@ -297,7 +298,8 @@ public class Principal {
             System.out.println("No se agregó el trabajo 4");
         //*****************************TRABAJOS***********************************
         
-        System.out.println("\n*** LISTA DE TRABAJOS *** \n ");
+        System.out.println("\n\n");
+        System.out.println("\n***** LISTA DE TRABAJOS ***** \n ");
         for (Trabajo t : listaTrabajos)
             t.mostrar();
         

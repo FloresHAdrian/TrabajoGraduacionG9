@@ -5,7 +5,6 @@
  */
 package gui.trabajos.modelos;
 
-import gui.personas.modelos.Persona;
 import gui.personas.modelos.Profesor;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -27,12 +26,6 @@ public class RolEnTrabajo {
         this.unRol = unRol;
     }
  
-    public void agregarProfesorEnRol(LocalDate fecha,Rol unRol,Profesor unProfesor){
-        this.setFechaDesde(fecha);
-        this.setUnRol(unRol);
-        this.setUnProfesor(unProfesor);
-    }
-
     public LocalDate getFechaDesde() {
         return fechaDesde;
     }
@@ -71,6 +64,13 @@ public class RolEnTrabajo {
 
     public void setUnRol(Rol unRol) {
         this.unRol = unRol;
+    }
+    
+    //Metodo para agregar un profesor a un rol
+    public void agregarProfesorEnRol(LocalDate fecha,Rol unRol,Profesor unProfesor){
+        this.setFechaDesde(fecha);
+        this.setUnRol(unRol);
+        this.setUnProfesor(unProfesor);
     }
     
     //Metodo para mostrar solo los datos del profesor en el rol
