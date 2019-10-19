@@ -9,7 +9,7 @@ import java.util.Objects;
 
 /**
  *
- * @author gabinete
+ * @author Grupo G9
  */
 public class Area {
     private String nombre;
@@ -18,6 +18,8 @@ public class Area {
         this.nombre = nombre;
     }
     
+    
+    ////<editor-fold defaultstate="collapsed" desc="Metodos Get-Set" >   
     public String getNombre() {
         return nombre;
     }
@@ -25,19 +27,16 @@ public class Area {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    //Metodo para mostrar el nombre del Area
-    public void mostrar(){
-        System.out.println("\tArea: "+nombre);
-    }
+    //</editor-fold>
 
+    //<editor-fold defaultstate="collapsed" desc="HashCode, Equals, ToString">
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 17 * hash + Objects.hashCode(this.nombre);
         return hash;
     }
-
+    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -60,5 +59,12 @@ public class Area {
     public String toString() {
         return "Area: "+ nombre ;
     }
-        
+//</editor-fold>
+ 
+    /**
+     * Metodo para mostrar el nombre del area
+     */
+    public void mostrar(){
+        System.out.println("\tArea: "+nombre);
+    }
 }

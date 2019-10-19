@@ -7,20 +7,22 @@ package gui.personas.modelos;
 
 /**
  *
- * @author Adrian
+ * @author Grupo G9
  */
 public abstract class Persona {
     private String apellido;
     private String nombre;
     private int dni;
 
+    ////<editor-fold defaultstate="collapsed" desc="Constructor">
     public Persona(String apellido, String nombre, int dni) {
         this.apellido = apellido;
         this.nombre = nombre;
         this.dni = dni;
     }
+    //</editor-fold>
     
-    
+    ////<editor-fold defaultstate="collapsed" desc="Metodos Get-Set">
     public String getApellido() {
         return apellido;
     }
@@ -44,12 +46,9 @@ public abstract class Persona {
     public void setDni(int dni) {
         this.dni = dni;
     }
+    //</editor-fold>
     
-    //Metodo mostrar
-    public void mostrar(){
-        System.out.print("["+dni+"] - "+apellido+", "+nombre);
-    }
-
+    ////<editor-fold defaultstate="Collapsed" desc="HashCode, Equals, ToString">
     @Override
     public int hashCode() {
         int hash = 7;
@@ -78,5 +77,13 @@ public abstract class Persona {
     @Override
     public String toString() {
         return "["+dni+"] - "+apellido+", "+nombre;
+    }
+    //</editor-fold>
+    
+    /**
+     * Metodo para mostrar los datos de la persona
+     */
+    public void mostrar(){
+        System.out.print("["+dni+"] - "+apellido+", "+nombre);
     }
 }

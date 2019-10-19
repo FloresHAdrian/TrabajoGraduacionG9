@@ -11,7 +11,7 @@ import java.util.Objects;
 
 /**
  *
- * @author gabinete
+ * @author Grupo G9
  */
 public class AlumnoEnTrabajo {
     private LocalDate fechaDesde;
@@ -19,57 +19,57 @@ public class AlumnoEnTrabajo {
     private String razon;
     private Alumno unAlumno;
 
+    //<editor-fold defaultstate="collapsed" desc="Constructor">
     public AlumnoEnTrabajo(LocalDate fechaDesde, Alumno unAlumno) {
         this.fechaDesde = fechaDesde;
         this.unAlumno = unAlumno;
     }
-
+//</editor-fold>
+  
+    //<editor-fold defaultstate="collapsed" desc="Metodos Get-Set">
     public LocalDate getFechaDesde() {
         return fechaDesde;
     }
-
+    
     public void setFechaDesde(LocalDate fechaDesde) {
         this.fechaDesde = fechaDesde;
     }
-
+    
     public LocalDate getFechaHasta() {
         return fechaHasta;
     }
-
+    
     public void setFechaHasta(LocalDate fechaHasta) {
         this.fechaHasta = fechaHasta;
     }
-
+    
     public String getRazon() {
         return razon;
     }
-
+    
     public void setRazon(String razon) {
         this.razon = razon;
     }
-
+    
     public Alumno getUnAlumno() {
         return unAlumno;
     }
-
+    
     public void setUnAlumno(Alumno unAlumno) {
         this.unAlumno = unAlumno;
     }
-    
-    public void mostrarAlumno(){
-        this.unAlumno.mostrar();
-    }
+//</editor-fold>
 
+    //<editor-fold defaultstate="collapsed" desc="HashCode, Equals, ToString">
     @Override
     public int hashCode() {
         int hash = 3;
         hash = 29 * hash + Objects.hashCode(this.unAlumno);
         return hash;
     }
-
+    
     @Override
     public boolean equals(Object obj) {
-        //super.equals
         if (this == obj) {
             return true;
         }
@@ -85,10 +85,17 @@ public class AlumnoEnTrabajo {
         }
         return true;
     }
-        
+    
     @Override
     public String toString() {
         return "AlumnoEnTrabajo:" + "\n\tDesde: " + fechaDesde + "\n\tHasta:" + fechaHasta + "\n\tRazon:" + razon + "\n\tAlumno=" + unAlumno;
     }
+//</editor-fold>
 
+    /**
+     * Metodo para mostrar al alumno en trabajo
+     */
+    public void mostrarAlumno(){
+        this.unAlumno.mostrar();
+    }
 }

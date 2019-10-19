@@ -9,24 +9,19 @@ import java.util.Objects;
 
 /**
  *
- * @author gabinete
+ * @author Grupo G9
  */
 public class Alumno extends Persona{
-    private String cx; //Como veniamos trabajando con cx desde el principio, decidimos dejarlo y no cambiarlo por legajo
-   
-    
+    private String cx; 
+       
+    ////<editor-fold defaultstate="collapsed" desc="Constructor">
     public Alumno(String apellidos,String nombre, int dni, String cx){
         super(apellidos,nombre,dni);
         this.cx=cx;
     }
-    
-    @Override
-    public void mostrar(){
-        super.mostrar();
-        System.out.print(" - CX:"+cx+"\n");
-    }
+    //</editor-fold>
 
-
+    ////<editor-fold defaultstate="collapsed" desc="Metodos Get-Set">
     public String getCx() {
         return cx;
     }
@@ -34,41 +29,33 @@ public class Alumno extends Persona{
     public void setCx(String cx) {
         this.cx = cx;
     }
+//</editor-fold>
 
+    ////<editor-fold defaultstate="collapsed" desc="HashCode, Equals, ToString">
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 71 * hash + Objects.hashCode(this.cx);
+        int hash = 5;
+        hash = 19 * hash + Objects.hashCode(this.cx);
         return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
-//        super.equals(obj);  //Como el super.equals no funcionaba, lo comentamos e hicimos 
-                              // las modificaciones necesarias para que funciones
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass().getSuperclass() != obj.getClass().getSuperclass()) {
-            return false;
-        }
-        
-        if(obj.getClass() == Profesor.class){ //Si comparao con un alumno con un profesor entra en el if, donde compara si tienen mismo DNI
-            final Persona other1 = (Persona) obj;
-            if (this.getDni() != other1.getDni()) {
+        if(!super.equals(obj)){
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null) {
                 return false;
-            } 
-        }
-        else{
+            }
+            if (getClass() != obj.getClass()) {
+                return false;
+            }
             final Alumno other = (Alumno) obj;
-            if (!Objects.equals(this.cx, other.cx) && this.getDni() != other.getDni()) {
+            if (!Objects.equals(this.cx, other.cx)) {
                 return false;
             }
         }
-        
         return true;
     }
    
@@ -77,5 +64,15 @@ public class Alumno extends Persona{
         return super.toString() + " - CX:"+cx ;
     }
     
+    //</editor-fold>
+    
+    /**
+     * Metodo para mostrar el alumno
+     */
+    @Override
+    public void mostrar(){
+        super.mostrar();
+        System.out.print(" - CX:"+cx+"\n");
+    }
 }
 
